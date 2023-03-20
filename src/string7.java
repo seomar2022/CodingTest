@@ -16,7 +16,7 @@ public class string7 {
          */
         Scanner sc = new Scanner(System.in);
         int T = sc.nextInt();
-    //    sc.nextLine();
+        sc.nextLine();
        // System.out.printf("T: %d\n", T);
 
         int tCount = 0;
