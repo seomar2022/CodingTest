@@ -1,6 +1,9 @@
+import java.util.Scanner;
+
 public class string8 {
     public static void main(String[] args) {
         /*
+        https://www.acmicpc.net/problem/1152
         문제
         영어 대소문자와 공백으로 이루어진 문자열이 주어진다. 이 문자열에는 몇 개의 단어가 있을까? 이를 구하는 프로그램을 작성하시오. 단, 한 단어가 여러 번 등장하면 등장한 횟수만큼 모두 세어야 한다.
 
@@ -10,6 +13,22 @@ public class string8 {
         출력
         첫째 줄에 단어의 개수를 출력한다.
          */
+        Scanner sc = new Scanner(System.in);
+        String sentence = sc.nextLine();
+
+        int len = sentence.split(" ").length;
+      //  System.out.println("len -> "+ len);
+
+        if(sentence.charAt(0) == ' '){
+
+            len--;
+            if (len == -1){ //sentenceが空白１つだけある時、 <-この部分が大事
+                len = 0;
+            }
+        }
+        System.out.println(len);
+
+
     }
 
 }
