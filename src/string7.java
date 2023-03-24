@@ -21,10 +21,11 @@ public class string7 {
 
         int tCount = 0;
         while (tCount < T){
-            int R = sc.nextInt();
+            String input = sc.nextLine();
+            int R = Integer.parseInt(input.split(" ")[0]);
          //   System.out.printf("R: %d\n", R);
-           sc.nextLine();
-            String S = sc.nextLine();
+
+            String S = input.split(" ")[1];
             for (char s: S.toCharArray()) {
                 int rCount = 0;
                 while (rCount < R){
@@ -40,3 +41,5 @@ public class string7 {
 
     }
 }
+//예제 입력에 3 ABC라고 써있으니까, 입력은 두개들어오는게 아니고 한개 들어오는거임
+// 두개로 처리하면 런타임 에러 (NoSuchElement)
