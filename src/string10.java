@@ -1,3 +1,5 @@
+import java.util.Scanner;
+//https://www.acmicpc.net/problem/5622
 public class string10 {
     public static void main(String[] args) {
         /*
@@ -15,5 +17,46 @@ public class string10 {
         출력
         첫째 줄에 다이얼을 걸기 위해서 필요한 최소 시간을 출력한다.
          */
+
+        Scanner sc = new Scanner(System.in);
+        String word = sc.nextLine();
+        char[] letters = word.toCharArray();
+
+        int time = 0;
+
+        for(int letter: letters){
+            if(letter >= 65 && letter <= 67){
+                //2
+               // System.out.println(letter);
+                time+=3;
+            }else if(letter >= 68 && letter <= 70){
+                //3
+                time+=4;
+            }else if(letter >= 71 && letter <= 73){
+                //4
+                time+=5;
+            }else if(letter >= 74 && letter <= 76){
+                //5
+                time+=6;
+            }else if(letter >= 77 && letter <= 79){
+                //6
+                time+=7;
+            }else if(letter >= 80 && letter <= 83){//
+                //7
+                time+=8;
+            }else if(letter >= 84 && letter <= 86){
+                //8
+                time+=9;
+            }else if(letter >= 87 && letter <= 90){//
+                //9
+                time+=10;
+               // System.out.println(letter);
+            }
+        }
+        System.out.println(time);
+
+
+
+
     }
 }
