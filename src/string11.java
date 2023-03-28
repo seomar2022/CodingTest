@@ -14,7 +14,11 @@ public class string11 {
         입력받은 그대로 출력한다.
          */
         Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine();
-        System.out.println(input);
+
+        while(true){
+            String input = sc.nextLine();
+            System.out.println(input);
+        }
+
     }
 }
