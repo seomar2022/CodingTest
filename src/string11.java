@@ -12,12 +12,17 @@ public class string11 {
 
         출력
         입력받은 그대로 출력한다.
+
+        모든 입력이 종료되면 더이상 출력을 시도하지 않고 바로 종료해야 합니다. 그리고, 개행 문자도 정확하게 출력할 수 있어야 합니다.
+        https://www.acmicpc.net/board/view/21771
          */
         Scanner sc = new Scanner(System.in);
 
-        while(true){
+        int count = 0;
+        while(count < 100){
             String input = sc.nextLine();
             System.out.println(input);
+            count++;
         }
 
     }
