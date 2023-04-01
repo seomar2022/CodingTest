@@ -18,6 +18,8 @@ output
   *****
    ***
     *
+
+각 줄의 마지막 * 다음에는 " " 빈 칸을 채우지 않아요. 다시 말해, 각 줄은 * \n 로 끝나야합니다.
  */
 /*
 
@@ -29,61 +31,34 @@ output
 4 -> 2, 3, 4, 5, 6, 7, 8
 5 -> 1, 2, 3, 4, 5, 6, 7, 8, 9
 
-6 -> 2, 3, 4, 5, 6, 7, 8
-7 -> 3, 4, 5, 6, 7
-8 -> 4, 5, 6
-9 -> 5
-
+6(=4) -> 2, 3, 4, 5, 6, 7, 8
+7(=3)-> 3, 4, 5, 6, 7
+8(=2) -> 4, 5, 6
+9(=1)-> 5
  */
         Scanner sc = new Scanner(System.in);
         int input = sc.nextInt(); sc.nextLine();
-       // System.out.println("*" * input);
-        //int count = input * 2 - 1;
-        for(int i = 1; i<=input * 2 - 1;i++){
-            System.out.println(i);
 
-            int count = 1;
-            System.out.printf("|");
-            while(count <= input * 2 - 1){
-                if(count > input-i && count < input+i){
-                    System.out.printf("%c", '*');
+        for(int row = 1; row<=input * 2 - 1;row++){ //총 input * 2 - 1줄
+            int col = 1;
+            while(col <= input * 2 - 1){ //한줄에 input * 2 - 1개 들어가야함
+                if(row <= input) {
+                    if (col > input - row && col < input + row) {
+                        System.out.printf("%c", '*');
+                    } else if(col <= input - row) {
+                        System.out.printf("%c", ' ');
+                    }
                 }else {
-                    System.out.printf("%c", ' ');
+                    int newRow = input *2 - row; // row = input *2 - rowにしたら、row=6, row=4の無限ループになるからダメ
+                    if (col > input - newRow && col < input + newRow) {
+                        System.out.printf("%c", '*');
+                    } else if(col <= input - newRow){
+                        System.out.printf("%c", ' ');
+                    }
                 }
-                count++;
+                col++;
             }
-            System.out.printf("|");
             System.out.printf("\n");
-            while (count > input * 2 - 1){
-
-            }
-
-
-            //1 2 3
-            //1 3 5
-            //
-//            while(i >0){
-//                System.out.printf("%c", '*');
-//            }
-//            i--;
-
-            /*
-            if(i <= input){
-                for(int j = i; j<i * 2 - 1;j++){
-                    System.out.println("i ->" + i);
-                    System.out.println("j ->" + j);
-                    System.out.printf("%c", '*');
-                }
-            }else {
-                //6 7 8 9
-                //1 2 3 4
-                //7 5 3 1
-                for(int j = i-input; j<(i-input) * 2 - 1;j++){
-                    System.out.printf("%c", '*');
-                }
-            }
-
-             */
 
 
         }
