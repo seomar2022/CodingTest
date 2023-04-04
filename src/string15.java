@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class string15 {
@@ -21,6 +22,12 @@ mid, mid+1, ..., end-1, end, begin, begin+1, ..., mid-1로 바꾸게 된다.
 도현이는 입력으로 주어진 순서대로 바구니의 순서를 회전시킨다.
 10 5
 1 6 4
+
+1 2 3 4 5 6    7 8 9 10
+4 5 6 1 2 3    7 8 9 10
+
+
+
 3 9 8
 2 10 5
 1 3 3
@@ -35,23 +42,52 @@ mid, mid+1, ..., end-1, end, begin, begin+1, ..., mid-1로 바꾸게 된다.
 
         int quantity = Integer.parseInt(basketInfo[0]);
 
-        int[] basket = new int[quantity];
-        for(int i = 1; i <= quantity; i++){
-            basket[i-1] = i;
+        int[] baskets = new int[quantity];
+        for(int i = 0; i < quantity; i++){
+            baskets[i] = i;
         }
 
 
         int rotation = Integer.parseInt(basketInfo[1]);
-        System.out.println(quantity);
-        System.out.println(rotation);
 
         while (rotation > 0){
+            int[] copyBaskets = Arrays.copyOf(baskets, quantity);
+
             String[] ruleInfo = sc.nextLine().split(" ");
-            int begin = Integer.parseInt(ruleInfo[0]);
-            int end = Integer.parseInt(ruleInfo[1]);
-            int mid = Integer.parseInt(ruleInfo[2]);
+            int begin = Integer.parseInt(ruleInfo[0]) -1;
+            int end = Integer.parseInt(ruleInfo[1]) -1;
+            int mid = Integer.parseInt(ruleInfo[2]) -1;
             rotation--;
+
+            for (int i = mid; i <= end; i++){
+                //int begin2 = begin;
+                baskets[begin + i - mid] = copyBaskets[i];
+                System.out.println(begin + i - mid);
+                //System.out.println(baskets[begin2]);
+                //System.out.println(baskets[i]);
+                //System.out.println("--------------");
+               // begin2++;
+            }
+            for (int j = begin; j < mid; j++){
+
+                baskets[mid + j - begin] = copyBaskets[j];
+               // System.out.println("mid ->"+ mid);
+               // System.out.println("j ->"+j);
+
+            }
+
+//            for (int basket2: copyBaskets){
+//                System.out.printf("%d ", basket2+1);
+//            }
+//            System.out.println();
         }
+
+
+        for (int basket: baskets){
+            System.out.printf("%d ", basket+1);
+        }
+
+
 
 
     }
