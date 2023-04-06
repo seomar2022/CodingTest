@@ -69,15 +69,94 @@ mid, mid+1, ..., end-1, end, begin, begin+1, ..., mid-1로 바꾸게 된다.
             int mid = Integer.parseInt(ruleInfo[2]) -1;
             rotation--;
 
-            for (int i = mid; i <= end; i++){
+            int i = 0;
+            while (i<= end-mid){
+
+                baskets[begin + i] = copyBaskets[mid +i];
+                i++;
+                //1 6 4
+                //0 5 3
+                //end-mid = 5-3= 2
+                //1 2 3 4 5 6    7 8 9 10
+                //4 5 6 4 5 6   7 8 9 10
+                //begin + i ->
+                //
+
+            }
+            int j = 0;
+            while (j < mid-begin){
+                baskets[mid + j] = copyBaskets[begin + j];
+                System.out.println(mid-begin);
+                System.out.println("mid + j-> "+ (mid + j));
+                System.out.println("begin + j-> "+(begin + j));
+
+                j++;
+                //1 6 4
+                //0 5 3
+                //mid-begin = 4-1=3
+                //1 2 3 4 5 6    7 8 9 10
+                //4 5 6 1 2 3    7 8 9 10
+                //j -> 0 1 2
+                //mid + j  -> 3 4 5
+                //begin + j -> 0 1 2
+
+            }
+
+            for (int basket: baskets){
+                System.out.printf("%d ", basket+1);
+            }
+            System.out.println();
+
+//            for (int j = begin; j < mid; j++){
+//
+//                baskets[mid + j - begin] = copyBaskets[j];
+//                // System.out.println("mid ->"+ mid);
+//                // System.out.println("j ->"+j);
+//
+//            }
+
+
+            /*
+
+
+            for (int i = mid; i <= mid+(end-mid); i++){
                 //int begin2 = begin;
                 baskets[begin + i - mid] = copyBaskets[i];
-                System.out.println(begin + i - mid);
+              //  System.out.println(begin + i - mid);
+
+                System.out.println("end ->"+end);
+                //1 6 4
+                //0 5 3
+                //1 2 3 4 5 6    7 8 9 10
+                //4 5 6 1 2 3    7 8 9 10
+                //begin -> 0 0 0
+                //i     -> 3 4 5
+                //mid   -> 3 3 3
+
+                //3 9 8
+                //2 8 7
+                //4 5    6 1 2 3 7 8 9 　　10
+                //4 5    8 69  1 2 3 7 　　10
+                //begin -> 2 2 2
+                //i     -> 7 8 9
+                //mid   -> 7 7 7
+                //         2 3 4
+                System.out.println("begin -> " + begin);
+                System.out.println("i -> " + i);
+                System.out.println("mid -> " + mid);
+                System.out.println("total-> " + (begin + i - mid));
+
+
+
+
                 //System.out.println(baskets[begin2]);
                 //System.out.println(baskets[i]);
                 //System.out.println("--------------");
                // begin2++;
             }
+
+
+
             for (int j = begin; j < mid; j++){
 
                 baskets[mid + j - begin] = copyBaskets[j];
@@ -85,6 +164,7 @@ mid, mid+1, ..., end-1, end, begin, begin+1, ..., mid-1로 바꾸게 된다.
                // System.out.println("j ->"+j);
 
             }
+*/
 
 //            for (int basket2: copyBaskets){
 //                System.out.printf("%d ", basket2+1);
