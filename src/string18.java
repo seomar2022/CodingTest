@@ -17,17 +17,33 @@ public class string18 {
          */
         Scanner sc = new Scanner(System.in);
         int count = sc.nextInt(); sc.nextLine();
-        System.out.println(count);
+
         while(count >0){
             String input = sc.nextLine();
             int numberOfStudents = Integer.parseInt(input.split(" ")[0]);
 
             int sum = 0;
-            while (numberOfStudents >0){
-                sum += Integer.parseInt(input.split(" ")[numberOfStudents]);
-                numberOfStudents--;
+            int numberOfStudents2 = numberOfStudents;
+            String[] scores = input.split(" ");
+            int[] scores2 = new int[numberOfStudents];
+
+            while (numberOfStudents2 >0){
+                scores2[numberOfStudents2 -1]= Integer.parseInt(scores[numberOfStudents2]);
+                numberOfStudents2--;
             }
-            System.out.println(sum/numberOfStudents);
+
+            while (numberOfStudents2 < numberOfStudents){
+                sum += scores2[numberOfStudents2];
+                numberOfStudents2++;
+            }
+
+            int aboveAverage =0;
+            for(int score: scores2){
+                if(score> sum/numberOfStudents){
+                    aboveAverage++;
+                }
+            }
+            System.out.printf("%.3f%%\n", (float)aboveAverage/numberOfStudents * 100);
 
             count--;
         }
