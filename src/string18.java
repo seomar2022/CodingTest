@@ -27,16 +27,19 @@ public class string18 {
             String[] scores = input.split(" ");
             int[] scores2 = new int[numberOfStudents];
 
+            //String[] -> int[]
             while (numberOfStudents2 >0){
                 scores2[numberOfStudents2 -1]= Integer.parseInt(scores[numberOfStudents2]);
                 numberOfStudents2--;
             }
 
+            //学生たちの点数の合計
             while (numberOfStudents2 < numberOfStudents){
                 sum += scores2[numberOfStudents2];
                 numberOfStudents2++;
             }
 
+            //平均以上の点数の学生の人数
             int aboveAverage =0;
             for(int score: scores2){
                 if(score> sum/numberOfStudents){
