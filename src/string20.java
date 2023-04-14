@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.Scanner;
+
 public class string20 {
     public static void main(String[] args) {
         /*
@@ -29,5 +32,51 @@ public class string20 {
         new
         year
          */
+
+        Scanner sc = new Scanner(System.in);
+        int count = sc.nextInt(); sc.nextLine();
+        int numberOfGroupWords = 0;
+        int loop = 0;
+        while(loop < count){
+            String sentence = sc.nextLine();
+            HashSet<Character> letters = new HashSet<>(sentence.length());
+            for(int i = 0; i < sentence.length(); i++){
+                letters.add(sentence.charAt(i));
+            }
+
+            String group = "";
+            int groupWord = 0;
+            for(char letter : letters){
+
+                int startIndex = sentence.indexOf(letter);
+             //  System.out.println(sentence.indexOf(letter));
+
+                int endIndex = sentence.lastIndexOf(letter);
+             //   System.out.println(sentence.lastIndexOf(letter));
+                group = sentence.substring(startIndex, endIndex+1);
+
+
+               // System.out.println(group);
+
+              //  System.out.println("chk ->"+String.valueOf(letter).repeat(endIndex - startIndex + 1));
+                if(group.equals(String.valueOf(letter).repeat(endIndex - startIndex + 1))){
+                    groupWord++;
+                }
+            }
+
+            if(groupWord == letters.size()){
+                numberOfGroupWords++;
+            }
+
+
+
+
+           // System.out.println(letters);
+            System.out.println(numberOfGroupWords);
+
+            loop++;
+        }
+
+
     }
 }
