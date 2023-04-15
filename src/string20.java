@@ -37,15 +37,21 @@ public class string20 {
         int count = sc.nextInt(); sc.nextLine();
         int numberOfGroupWords = 0;
         int loop = 0;
+
+        //指定された個数分繰り返す
         while(loop < count){
             String sentence = sc.nextLine();
+
+            //重複を無くすため、HashSet使う
             HashSet<Character> letters = new HashSet<>(sentence.length());
+
+            //sentenceの各文字を格納
             for(int i = 0; i < sentence.length(); i++){
                 letters.add(sentence.charAt(i));
             }
 
             String group = "";
-            int groupWord = 0;
+            int groupWordChk = 0;
             for(char letter : letters){
 
                 int startIndex = sentence.indexOf(letter);
@@ -60,11 +66,12 @@ public class string20 {
 
               //  System.out.println("chk ->"+String.valueOf(letter).repeat(endIndex - startIndex + 1));
                 if(group.equals(String.valueOf(letter).repeat(endIndex - startIndex + 1))){
-                    groupWord++;
+                    groupWordChk++;
                 }
             }
 
-            if(groupWord == letters.size()){
+
+            if(groupWordChk == letters.size()){//その単語が全ての基準を満たしたら
                 numberOfGroupWords++;
             }
 
@@ -72,11 +79,11 @@ public class string20 {
 
 
            // System.out.println(letters);
-            System.out.println(numberOfGroupWords);
+            // System.out.println(numberOfGroupWords);
 
             loop++;
         }
 
-
+        System.out.println(numberOfGroupWords);
     }
 }
