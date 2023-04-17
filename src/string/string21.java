@@ -1,3 +1,5 @@
+package string;
+
 import java.util.Scanner;
 
 public class string21 {
@@ -8,9 +10,13 @@ public class string21 {
         int totalCredit = 0;
         float totalGrade = 0.0F;
         float subtotal= 0;
+        Scanner sc = new Scanner(System.in);
+
 
         while (loop >0 ){
-            Scanner sc = new Scanner(System.in);
+            //Scanner sc = new Scanner(System.in);
+            //このコードでNoSuchElementランタイムエラーが発生する理由は、Scannerがデータを読み込むことができないためです。whileループが20回実行される間、Scannerオブジェクトを再作成するため、各ループでユーザーからの入力を受け取る必要があります。
+
             String gradeInfo = sc.nextLine();
 
 
@@ -18,14 +24,17 @@ public class string21 {
             int credit = Character.getNumericValue(gradeInfo.charAt(gradeInfo.indexOf(" ")+1));
 //            System.out.println("aaaa"+ gradeInfo.indexOf(" ")+1));
 
+            float gradeToFloat = 0;
             //最後のスペースの次が成績
             String grade = "";
             if(gradeInfo.charAt(gradeInfo.lastIndexOf(" ")+1) == 'P'){
                 credit = 0;
+            }else if(gradeInfo.charAt(gradeInfo.lastIndexOf(" ")+1) == 'F'){
+                gradeToFloat = 0;
             }else {
                 grade = gradeInfo.substring(gradeInfo.lastIndexOf(" ")+1, gradeInfo.lastIndexOf(" ")+3);
             }
-            float gradeToFloat = 0;
+
 
             //float gradeToInt;
             if(grade.equals("A+")){
@@ -44,10 +53,7 @@ public class string21 {
                 gradeToFloat = 1.5F;
             }else if(grade.equals("D0")){
                 gradeToFloat = 1.0F;
-            }else if(grade.equals("F")){
-                gradeToFloat = 0.0F;
             }
-
 
             subtotal += credit*gradeToFloat;
 
@@ -61,6 +67,6 @@ public class string21 {
             loop--;
         }
 
-        System.out.println(subtotal/totalCredit);
+        System.out.printf("%.6f", subtotal/totalCredit);
     }
 }

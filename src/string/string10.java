@@ -1,3 +1,5 @@
+package string;
+
 import java.util.Scanner;
 //https://www.acmicpc.net/problem/5622
 public class string10 {

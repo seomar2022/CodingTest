@@ -1,6 +1,8 @@
+package string;
+
 import java.util.*;
 
-public class string1 {
+public class String1 {
 
     public static void main(String[] args){
 
