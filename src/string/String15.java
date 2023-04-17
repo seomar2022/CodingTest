@@ -3,7 +3,7 @@ package string;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class string15 {
+public class String15 {
     public static void main(String[] args) {
         /*
         https://www.acmicpc.net/problem/10812

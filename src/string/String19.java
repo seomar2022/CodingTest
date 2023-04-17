@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.TreeSet;
 
-public class string19 {
+public class String19 {
     public static void main(String[] args) {
         /*
         https://www.acmicpc.net/problem/2941

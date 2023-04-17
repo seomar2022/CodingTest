@@ -3,7 +3,7 @@ package string;
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class string20 {
+public class String20 {
     public static void main(String[] args) {
         /*
 

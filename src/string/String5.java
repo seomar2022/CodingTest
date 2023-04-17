@@ -2,7 +2,7 @@ package string;
 
 import java.util.Scanner;
 
-public class string5 {
+public class String5 {
     public static void main(String[] args) {
         /*
         https://www.acmicpc.net/problem/11720

@@ -2,7 +2,7 @@ package string;
 
 import java.util.*;
 
-public class string17 {
+public class String17 {
     public static void main(String[] args) {
         /*https://www.acmicpc.net/problem/1157
         문제

@@ -1,6 +1,6 @@
 package string;
 
-public class string12 {
+public class String12 {
     public static void main(String[] args) {
 
 /*
