@@ -1,5 +1,7 @@
 package matrix;
 
+import java.util.Scanner;
+
 public class Matrix1 {
     public static void main(String[] args) {
         /*
@@ -22,5 +24,8 @@ N*Mサイズの2つの行列AとBが与えられた時、2つの行列を加え�
 出力
 最初の行からN個の行に行列AとBを加えた行列を出力する。 行列の各元素は空白で区切る。
          */
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+
     }
 }
