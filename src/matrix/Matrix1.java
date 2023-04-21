@@ -26,6 +26,23 @@ N*Mサイズの2つの行列AとBが与えられた時、2つの行列を加え�
          */
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
+        int sizeOfMatrix1 = Integer.parseInt(input.split(" ")[0]);
+        int sizeOfMatrix2 = Integer.parseInt(input.split(" ")[1]);
+        System.out.println(sizeOfMatrix1);
+        System.out.println(sizeOfMatrix2);
+
+
+        int[][] matrix1;
+        int[][] matrix2;
+
+
+        int count1 = 0;
+        while (count1 < sizeOfMatrix1){
+
+            count1++;
+        }
+
+
 
     }
 }
