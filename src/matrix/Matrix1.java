@@ -38,6 +38,9 @@ N*Mサイズの2つの行列AとBが与えられた時、2つの行列を加え�
 
         int count1 = 0;
         while (count1 < sizeOfMatrix1){
+            String elements = sc.nextLine();
+            for (int i = 0)
+            matrix1[][] = {}
 
             count1++;
         }
