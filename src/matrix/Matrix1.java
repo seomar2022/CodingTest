@@ -32,20 +32,36 @@ N*Mサイズの2つの行列AとBが与えられた時、2つの行列を加え�
         System.out.println(sizeOfMatrix2);
 
 
-        int[][] matrix1;
-        int[][] matrix2;
+        int[][] matrix1 = new int[sizeOfMatrix1][sizeOfMatrix1];
+        int[][] matrix2 = new int[sizeOfMatrix2][sizeOfMatrix2];;
 
 
         int count1 = 0;
         while (count1 < sizeOfMatrix1){
             String elements = sc.nextLine();
-            for (int i = 0)
-            matrix1[][] = {}
+            String[] element = elements.split(" ");
+
+            for (int i = 0; i < sizeOfMatrix1; i++){
+                System.out.println();
+                System.out.println("elements -> " +elements);
+                System.out.println("element -> "+ Integer.parseInt(element[i]));
+
+                  matrix1[count1][i] = Integer.parseInt(element[i]);
+            }
+
 
             count1++;
         }
 
 
+        System.out.println(matrix1);
+
 
     }
+
+//    public int[][] makeMatrix(){
+//
+//        return
+//    }
+
 }
