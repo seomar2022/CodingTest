@@ -28,40 +28,65 @@ N*Mサイズの2つの行列AとBが与えられた時、2つの行列を加え�
         String input = sc.nextLine();
         int sizeOfMatrix1 = Integer.parseInt(input.split(" ")[0]);
         int sizeOfMatrix2 = Integer.parseInt(input.split(" ")[1]);
-        System.out.println(sizeOfMatrix1);
-        System.out.println(sizeOfMatrix2);
 
+        int[][] matrix1 = makeMatrix(sizeOfMatrix1);
+        int[][] matrix2 = makeMatrix(sizeOfMatrix2);
 
-        int[][] matrix1 = new int[sizeOfMatrix1][sizeOfMatrix1];
-        int[][] matrix2 = new int[sizeOfMatrix2][sizeOfMatrix2];;
+        int resultSize = (sizeOfMatrix1>sizeOfMatrix2)? sizeOfMatrix1:sizeOfMatrix2;
+        int smallSize = (sizeOfMatrix1<sizeOfMatrix2)? sizeOfMatrix1:sizeOfMatrix2;
 
+        int[][] resultMatrix = new int[resultSize][resultSize];
 
-        int count1 = 0;
-        while (count1 < sizeOfMatrix1){
-            String elements = sc.nextLine();
-            String[] element = elements.split(" ");
-
-            for (int i = 0; i < sizeOfMatrix1; i++){
-                System.out.println();
-                System.out.println("elements -> " +elements);
-                System.out.println("element -> "+ Integer.parseInt(element[i]));
-
-                  matrix1[count1][i] = Integer.parseInt(element[i]);
+        for (int row = 0; row < smallSize; row++) {
+            for (int col = 0; col < smallSize; col++) {
+                resultMatrix[row][col] = matrix1[row][col] + matrix2[row][col];
             }
+        }
+        for (int row = smallSize; row < resultSize; row++) {
 
+            for (int col = smallSize; col < resultSize; col++) {
+                System.out.println("row->"+row);
+                System.out.println("col->"+col);
+                if(matrix1.length==resultSize){
+                    resultMatrix[row][col] = matrix1[row][col];
+                }else {
+                    resultMatrix[row][col] = matrix2[row][col];
+                }
 
-            count1++;
+            }
         }
 
 
-        System.out.println(matrix1);
 
-
+        //結果出力
+        for (int row = 0; row < resultSize; row++) {
+            for (int col = 0; col < resultSize; col++) {
+                System.out.print(resultMatrix[row][col] + " ");
+            }
+            System.out.println();
+        }
     }
 
-//    public int[][] makeMatrix(){
-//
-//        return
-//    }
+    public static int[][] makeMatrix(int sizeOfMatrix){
+        Scanner sc = new Scanner(System.in);
+        int[][] matrix = new int[sizeOfMatrix][sizeOfMatrix];
+
+
+        int row = 0;
+        while (row < sizeOfMatrix){
+            String elements = sc.nextLine();
+            String[] element = elements.split(" ");
+
+            for (int col = 0; col < sizeOfMatrix; col++){
+               // System.out.println("elements -> " +elements);
+               // System.out.println("element -> "+ Integer.parseInt(element[col]));
+
+                matrix[row][col] = Integer.parseInt(element[col]);
+            }
+            row++;
+        }
+
+        return matrix;
+    }
 
 }
