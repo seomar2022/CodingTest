@@ -45,12 +45,28 @@ N*Mサイズの2つの行列AとBが与えられた時、2つの行列を加え�
         for (int row = smallSize; row < resultSize; row++) {
 
             for (int col = smallSize; col < resultSize; col++) {
-                System.out.println("row->"+row);
-                System.out.println("col->"+col);
                 if(matrix1.length==resultSize){
-                    resultMatrix[row][col] = matrix1[row][col];
+                    int count = row;
+                    while(count >0){
+                        resultMatrix[count][col] = matrix1[count][col];
+                        count--;
+                    }
+                    while (count <resultSize-1){
+                        resultMatrix[row][count] = matrix1[row][count];
+                        //System.out.println("here?"+ matrix2[row][col]);
+                        count++;
+                    }
                 }else {
-                    resultMatrix[row][col] = matrix2[row][col];
+                    int count = row;
+                    while(count >0){
+                        resultMatrix[count][col] = matrix2[count][col];
+                        count--;
+                    }
+                    while (count <resultSize-1){
+                        resultMatrix[row][count] = matrix2[row][count];
+                        //System.out.println("here?"+ matrix2[row][col]);
+                        count++;
+                    }
                 }
 
             }
@@ -66,6 +82,7 @@ N*Mサイズの2つの行列AとBが与えられた時、2つの行列を加え�
             System.out.println();
         }
     }
+
 
     public static int[][] makeMatrix(int sizeOfMatrix){
         Scanner sc = new Scanner(System.in);
