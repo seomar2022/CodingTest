@@ -1,4 +1,4 @@
-package matrix;
+package matrix; //これのせいでmain class Mainのエラーが出た。でもpackage matrix;は必要。どうしたらいい？
 
 import java.util.Scanner;
 
@@ -32,8 +32,8 @@ N*Mサイズの2つの行列AとBが与えられた時、2つの行列を加え�
         int[][] matrix1 = makeMatrix(sizeOfMatrix1);
         int[][] matrix2 = makeMatrix(sizeOfMatrix2);
 
-        int resultSize = (sizeOfMatrix1>sizeOfMatrix2)? sizeOfMatrix1:sizeOfMatrix2;
-        int smallSize = (sizeOfMatrix1<sizeOfMatrix2)? sizeOfMatrix1:sizeOfMatrix2;
+        int resultSize = (sizeOfMatrix1 > sizeOfMatrix2) ? sizeOfMatrix1 : sizeOfMatrix2;
+        int smallSize = (sizeOfMatrix1 < sizeOfMatrix2) ? sizeOfMatrix1 : sizeOfMatrix2;
 
         int[][] resultMatrix = new int[resultSize][resultSize];
 
@@ -45,24 +45,24 @@ N*Mサイズの2つの行列AとBが与えられた時、2つの行列を加え�
         for (int row = smallSize; row < resultSize; row++) {
 
             for (int col = smallSize; col < resultSize; col++) {
-                if(matrix1.length==resultSize){
+                if (matrix1.length == resultSize) {
                     int count = row;
-                    while(count >0){
+                    while (count > 0) {
                         resultMatrix[count][col] = matrix1[count][col];
                         count--;
                     }
-                    while (count <resultSize-1){
+                    while (count < resultSize - 1) {
                         resultMatrix[row][count] = matrix1[row][count];
                         //System.out.println("here?"+ matrix2[row][col]);
                         count++;
                     }
-                }else {
+                } else {
                     int count = row;
-                    while(count >0){
+                    while (count > 0) {
                         resultMatrix[count][col] = matrix2[count][col];
                         count--;
                     }
-                    while (count <resultSize-1){
+                    while (count < resultSize - 1) {
                         resultMatrix[row][count] = matrix2[row][count];
                         //System.out.println("here?"+ matrix2[row][col]);
                         count++;
@@ -71,7 +71,6 @@ N*Mサイズの2つの行列AとBが与えられた時、2つの行列を加え�
 
             }
         }
-
 
 
         //結果出力
@@ -104,6 +103,6 @@ N*Mサイズの2つの行列AとBが与えられた時、2つの行列を加え�
         }
 
         return matrix;
-    }
+    }//end makeMatrix
 
 }
