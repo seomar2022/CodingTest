@@ -2,7 +2,7 @@ package matrix; //これのせいでmain class Mainのエラーが出た。で�
 
 import java.util.Scanner;
 
-public class Matrix1 {
+public class Matrix1 {//異なるsizeのmatrix2つを足して、。
     public static void main(String[] args) {
         /*
         https://www.acmicpc.net/problem/2738
@@ -24,6 +24,8 @@ N*Mサイズの2つの行列AとBが与えられた時、2つの行列を加え�
 出力
 最初の行からN個の行に行列AとBを加えた行列を出力する。 行列の各元素は空白で区切る。
          */
+
+        //これは異なるsizeのmatrixを足す。ー＞問題の理解が浅かった。問題をよく読みましょう。
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
         int sizeOfMatrix1 = Integer.parseInt(input.split(" ")[0]);
@@ -64,7 +66,6 @@ N*Mサイズの2つの行列AとBが与えられた時、2つの行列を加え�
                     }
                     while (count < resultSize - 1) {
                         resultMatrix[row][count] = matrix2[row][count];
-                        //System.out.println("here?"+ matrix2[row][col]);
                         count++;
                     }
                 }
@@ -80,7 +81,9 @@ N*Mサイズの2つの行列AとBが与えられた時、2つの行列を加え�
             }
             System.out.println();
         }
-    }
+
+        sc.close();
+    }// end Matrix1
 
 
     public static int[][] makeMatrix(int sizeOfMatrix){
