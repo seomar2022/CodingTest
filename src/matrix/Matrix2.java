@@ -1,5 +1,7 @@
 package matrix;
 
+import java.util.Scanner;
+
 public class Matrix2 {
     /*
     https://www.acmicpc.net/problem/2566
@@ -25,4 +27,41 @@ public class Matrix2 {
 출력
 첫째 줄에 최댓값을 출력하고, 둘째 줄에 최댓값이 위치한 행 번호와 열 번호를 빈칸을 사이에 두고 차례로 출력한다. 최댓값이 두 개 이상인 경우 그 중 한 곳의 위치를 출력한다.
      */
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int[][] matrix = new int[9][9];
+
+        int row = 0;
+            while (row < 9){
+            String elements = sc.nextLine();
+            String[] element = elements.split(" ");
+
+            for (int col = 0; col < 9; col++){
+                matrix[row][col] = Integer.parseInt(element[col]);
+            }
+            row++;
+        }
+
+        //最大値を探す
+        int max = 0;
+        int rowOfMax = -1;
+        int colOfMax = -1;
+
+        for (row = 0; row < 9; row++) {
+            for (int col = 0; col < 9; col++) {
+                if(max<matrix[row][col]){
+                    max = matrix[row][col];
+                    rowOfMax = row;
+                    colOfMax = col;
+                }
+            }
+        }
+
+        System.out.println(max);
+        System.out.printf("%d %d", rowOfMax, colOfMax);
+
+
+    }
 }
