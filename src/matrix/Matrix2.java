@@ -34,20 +34,22 @@ public class Matrix2 {
         int[][] matrix = new int[9][9];
 
         int row = 0;
-            while (row < 9){
+
+        //入力された値をmatrixに格納
+        while (row < 9){
             String elements = sc.nextLine();
             String[] element = elements.split(" ");
 
             for (int col = 0; col < 9; col++){
                 matrix[row][col] = Integer.parseInt(element[col]);
             }
-            row++;
+           row++;
         }
 
         //最大値を探す
         int max = 0;
-        int rowOfMax = -1;
-        int colOfMax = -1;
+        int rowOfMax = 0;
+        int colOfMax = 0;
 
         for (row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
@@ -60,7 +62,7 @@ public class Matrix2 {
         }
 
         System.out.println(max);
-        System.out.printf("%d %d", rowOfMax, colOfMax);
+        System.out.printf("%d %d", rowOfMax+1, colOfMax+1);
 
 
     }
