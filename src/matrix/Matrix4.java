@@ -28,9 +28,7 @@ public class Matrix4 {
             int x = Integer.parseInt(coordinate.split(" ")[0]);
             int y = Integer.parseInt(coordinate.split(" ")[1]);
 
-            //3, 7  ->  13, 17
-            //3,7  3,8  3,9
-            //3,7 4, 7
+            //黒い色紙の領域の座標を１に変更
             for(int row= x; row< x+10; row++){
                 for(int col = y; col< y+10; col++){
                     //System.out.printf("(%d, %d)", row, col);
@@ -43,7 +41,7 @@ public class Matrix4 {
         }
 
         int countOfBlackPaper = 0;
-        //結果出力
+        //黒い色紙の領域の面積を求めるため、値が１である座標の個数を数える
         for (int row = 0; row < 100; row++) {
             for (int col = 0; col < 100; col++) {
                // System.out.print(whitePaper[row][col]);
