@@ -25,16 +25,26 @@ public class Math1 {
         String input = sc.nextLine();
         String N = input.split(" ")[0];
         int B = Integer.parseInt(input.split(" ")[1]);
-        //2진법수 110은
+
+        int decimalSystem = 0;
+
         char[] numbers = N.toCharArray();
+        int index = numbers.length-1;
+
         for(char number: numbers){
-            System.out.print(number);
+            //System.out.print(number);
             if(!Character.isDigit(number)){//数字でない場合
                 System.out.println("letter");
             }
+            decimalSystem += (int)Math.pow(B, index) * Character.getNumericValue(number);
+            System.out.printf("%d %d %d\n", B, index, Character.getNumericValue(number));
+            System.out.printf("%d\n", (int)Math.pow(B, index));
+            System.out.printf("%d\n", (int)Math.pow(B, index) * Character.getNumericValue(number));
 
+            index--;
 
         }
+        System.out.println(decimalSystem);
 
     }
 }
