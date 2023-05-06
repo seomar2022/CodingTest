@@ -20,6 +20,21 @@ public class Math1 {
 
         출력
         첫째 줄에 B진법 수 N을 10진법으로 출력한다.
+
+        問題です
+        B進法数Nが与えられます。 この数を10進法に変えて出力するプログラムを作成しなさい。
+
+        10進法を超える進法は数字で表示できない桁があります。 このような場合は、次のようにアルファベットの大文字を使用します。
+
+        A: 10, B: 11, ..., F: 15, ..., Y: 34, Z: 35
+
+        入力します
+        1行目にNとBが与えられます。 (2 ≤ B ≤ 36)
+
+        B進法数Nを10進法に変えると、常に10億より小さいか同じです。
+
+        出力です
+        1行目にB進法数Nを10進法で出力します。
          */
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
@@ -32,14 +47,17 @@ public class Math1 {
         int index = numbers.length-1;
 
         for(char number: numbers){
-            //System.out.print(number);
+            int numberToInt=0;
+
             if(!Character.isDigit(number)){//数字でない場合
-                System.out.println("letter");
+                numberToInt = (int)number-55;
+            }else {
+                numberToInt = Character.getNumericValue(number);
             }
-            decimalSystem += (int)Math.pow(B, index) * Character.getNumericValue(number);
-            System.out.printf("%d %d %d\n", B, index, Character.getNumericValue(number));
-            System.out.printf("%d\n", (int)Math.pow(B, index));
-            System.out.printf("%d\n", (int)Math.pow(B, index) * Character.getNumericValue(number));
+            decimalSystem += (int)Math.pow(B, index) * numberToInt;
+            //System.out.printf("%d %d %d\n", B, index, Character.getNumericValue(number));
+            //System.out.printf("%d\n", (int)Math.pow(B, index));
+            //System.out.printf("%d\n", (int)Math.pow(B, index) * Character.getNumericValue(number));
 
             index--;
 
