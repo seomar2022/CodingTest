@@ -30,12 +30,18 @@ public class Math2 {
         while (N >= B){
 
             System.out.println(N % B);
-            remainder.add((char)(N % B));
+            System.out.println((char)(N % B));
+            if(N % B > 9){
+                remainder.add((char)(N % B));
+            }else {
+                remainder.add(Character.forDigit(N % B));
+            }
+
            // System.out.println(N/B);
             N = N/B;
         }
 
-        System.out.println(remainder);
+       // System.out.println(remainder);
 
 
 
