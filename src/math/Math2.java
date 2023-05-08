@@ -27,22 +27,29 @@ public class Math2 {
         ArrayList<Character> remainder = new ArrayList<>();
 
       //  int dividend = 0;
-        while (N >= B){
+        while (N > 0){
+            remainder.add(Character.forDigit(N % B, B));
 
-            System.out.println(N % B);
-            System.out.println((char)(N % B));
-            if(N % B > 9){
-                remainder.add((char)(N % B));
-            }else {
-                remainder.add(Character.forDigit(N % B));
-            }
+           // System.out.println(N % B);
+            //System.out.println(Character.forDigit(N % B, B));
+            //System.out.println("N/B"+N/B);
+
+//            if(N % B > 9){
+//                remainder.add((char)(N % B));
+//            }else {
+//                remainder.add(Character.forDigit(N % B, B));
+//            }
 
            // System.out.println(N/B);
             N = N/B;
         }
 
-       // System.out.println(remainder);
 
+        int cipher = remainder.size()-1;
+        while(cipher >=0){
+            System.out.print(remainder.get(cipher));
+            cipher--;
+        }
 
 
     }
