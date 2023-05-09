@@ -47,7 +47,7 @@ public class Math2 {
 
         int cipher = remainder.size()-1;
         while(cipher >=0){
-            System.out.print(remainder.get(cipher));
+            System.out.print(Character.toUpperCase(remainder.get(cipher)));
             cipher--;
         }
 
