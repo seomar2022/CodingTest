@@ -18,6 +18,22 @@ public class Math3 {
          */
         Scanner sc = new Scanner(System.in);
         int T = sc.nextInt(); sc.nextLine();
+        int[] change = new int[4];
+
+        while (T > 0){
+            int C = sc.nextInt(); sc.nextLine();
+            change[0] = C/25;
+            change[1] = (C%25)/10;
+            change[2] = C%25%10/5;
+            change[3] = C%25%10%5;
+            for(int a:change){
+                System.out.print(a + " ");
+            }
+
+            T--;
+        }
+
+
 
     }
 }
