@@ -17,17 +17,22 @@ public class Math3 {
 
          */
         Scanner sc = new Scanner(System.in);
-        int T = sc.nextInt(); sc.nextLine();
+      //  int T = sc.nextInt(); sc.nextLine(); //=>java.util.NoSuchElementException
+        //改行文字を読み取り、その結果、予想よりも次の入力行がスキップされ、要素がない状態でnextInt()が呼び出され、NoSuchElementExceptionが発生
+        //この場合、nextInt()の後に改行文字を読み飛ばすためにnextLine()を追加する必要
+        int T = Integer.parseInt(sc.nextLine());
+
         int[] change = new int[4];
 
         while (T > 0){
-            int C = sc.nextInt(); sc.nextLine();
+            //int C = sc.nextInt(); sc.nextLine();
+            int C = Integer.parseInt(sc.nextLine());
             change[0] = C/25;
-            change[1] = (C%25)/10;
+            change[1] = C%25/10;
             change[2] = C%25%10/5;
             change[3] = C%25%10%5;
-            for(int a:change){
-                System.out.print(a + " ");
+            for(int element:change){
+                System.out.print(element + " ");
             }
 
             T--;
