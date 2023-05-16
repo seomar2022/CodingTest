@@ -40,10 +40,10 @@ output
 The first and only line of output should contain one number, the number of points stored after N iterations.
 
          */
-        // 0->4 2^2
-        // 1->9 3^3
-        // 2->25 5^5
-        // 3->81 9^9
+        // 0->4 2*2
+        // 1->9 3*3
+        // 2->25 5*5
+        // 3->81 9*9
 
 
         // 1+2^n
