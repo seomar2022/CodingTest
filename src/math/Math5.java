@@ -24,9 +24,10 @@ public class Math5 {
 
 
         An = 6(n-1) + 2 -->違う
-        An = 6(n-1) + A(n-1) -->?
+        An = 6(n-1) + A(n-1) -->違う
 
-
+        A1 = 2
+        A(n+1) = An + 6n -->ただし、nは2以上
 
          */
         Scanner sc = new Scanner(System.in);
