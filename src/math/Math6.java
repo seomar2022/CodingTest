@@ -1,5 +1,7 @@
 package math;
 
+import java.util.Scanner;
+
 public class Math6 {
     public static void main(String[] args) {
     /*
@@ -34,23 +36,43 @@ public class Math6 {
     10 -> 4/1
 
     a=5 홀
-    11 -> 6/1
-    12 -> 5/2
+    11 -> 5/1
+    12 -> 4/2
+    13 -> 3/3
+    14 -> 2/4
+    15 -> 1/5
+
 
 
      */
         //특정 수 이하까지 1+2+3+4+...
 
+    Scanner sc = new Scanner(System.in);
+
+    int input = sc.nextInt();
+
     int group = 0;
-    int input = 12;
     int end_of_group = 0;
-    while (group<=input){
+    while (end_of_group<=input){
         group++;
         end_of_group +=group;
         System.out.printf("group: %d, end_of_group: %d\n", group, end_of_group);
-
     }
     System.out.println(group);
+
+
+    int numerator; //분자
+    int denominator; //분모
+    int distance = end_of_group-input;
+    if(group%2==0){//짝수면
+
+
+    }else{//홀수면
+        denominator = group -distance;
+        numerator = group + 1 - distance;
+    }
+
+    System.out.printf("%d, ");
 
     }
 }
