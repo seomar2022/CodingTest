@@ -36,43 +36,39 @@ public class Math6 {
     10 -> 4/1
 
     a=5 홀
-    11 -> 5/1
-    12 -> 4/2
-    13 -> 3/3
-    14 -> 2/4
-    15 -> 1/5
-
-
-
+    11 -> 5/1  4
+    12 -> 4/2  3
+    13 -> 3/3  2
+    14 -> 2/4  1
+    15 -> 1/5  0
      */
         //특정 수 이하까지 1+2+3+4+...
 
     Scanner sc = new Scanner(System.in);
-
     int input = sc.nextInt();
 
     int group = 0;
     int end_of_group = 0;
-    while (end_of_group<=input){
+    while (end_of_group<input){
         group++;
         end_of_group +=group;
         System.out.printf("group: %d, end_of_group: %d\n", group, end_of_group);
     }
-    System.out.println(group);
 
+    int numerator=0; //분자
+    int denominator=0; //분모
 
-    int numerator; //분자
-    int denominator; //분모
     int distance = end_of_group-input;
+
     if(group%2==0){//짝수면
-
-
+        numerator =group - distance;
+        denominator = group +1 - numerator;
     }else{//홀수면
-        denominator = group -distance;
-        numerator = group + 1 - distance;
+        denominator = group - distance;
+        numerator = group +1 -denominator;
     }
 
-    System.out.printf("%d, ");
+    System.out.printf("%d/%d", numerator, denominator);
 
     }
 }
