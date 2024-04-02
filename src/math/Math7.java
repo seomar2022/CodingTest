@@ -15,11 +15,11 @@ public class Math7 {
         int B = sc.nextInt(); //during each night it sleeps, sliding B meters back down
         int V = sc.nextInt(); //climb to the top of a wooden pole with the height of V meters
 
+        /*
+        시도1
+        시간초과
         int distance = 0;
         int number_of_days=1;
-
-        /*
-        시간초과
         while(distance < V){
             distance += A;
             if(distance < V){
@@ -30,13 +30,23 @@ public class Math7 {
 
          */
         
-        //시간초과
+        /*
+        시도2
+        시간초과
+        int distance = 0;
+        int number_of_days=1;
         while(V-distance > A){
             distance += A;
             distance -= B;
             number_of_days++;
         }
         System.out.println(number_of_days);
+         */
+
+        //시도3
+        //V-(A-B)(n-1) <= A를 만족하는 가장 작은 자연수 n
+        //마지막날의 전날 남은 높이가 A와 같거나 낮아야함.
+        System.out.println((int)Math.ceil((double)(V-A)/(A-B))+1);
 
     }
 }
