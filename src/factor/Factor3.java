@@ -43,7 +43,7 @@ Geordi began thinking about an algorithm to determine if a number was Perfect, b
                 } else {
                     System.out.printf("%d = 1", n);
                     for (int i : factors) {
-                        System.out.printf(" + %d", i);
+                        System.out.printf(" + %d\n", i);
                     }
                 }
             }
