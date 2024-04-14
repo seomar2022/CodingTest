@@ -16,6 +16,7 @@ Data agreed that Narcissistic Numbers were interesting, but not as good as his f
 Geordi began thinking about an algorithm to determine if a number was Perfect, but did not have the raw computing ability of Data. He needs a program to determine if a given number is Perfect.
      */
         Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> factors = new ArrayList<>();
 
         while(true) {
             int n = sc.nextInt();
@@ -26,7 +27,6 @@ Geordi began thinking about an algorithm to determine if a number was Perfect, b
                 int sum = 1;
                 int factor = 2;
 
-                ArrayList<Integer> factors = new ArrayList<>();
                 while (factor <= n / 2) {
                     if (n % factor == 0) {
                         factors.add(factor);
@@ -39,11 +39,11 @@ Geordi began thinking about an algorithm to determine if a number was Perfect, b
                 }
 
                 if (sum != n) {
-                    System.out.printf("%d is NOT perfect", n);
+                    System.out.printf("%d is NOT perfect.", n);
                 } else {
                     System.out.printf("%d = 1", n);
                     for (int i : factors) {
-                        System.out.printf(" + %d\n", i);
+                        System.out.printf(" + %d", i);
                     }
                 }
             }
