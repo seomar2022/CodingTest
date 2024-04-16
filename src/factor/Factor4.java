@@ -1,5 +1,6 @@
 package factor;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Factor4 {
@@ -17,23 +18,27 @@ public class Factor4 {
         int count =0;
         int chk = 0;
 
+        ArrayList<Integer> result = new ArrayList<>();
+
         while(i <N){
             int factor=2;
             int input = sc.nextInt();
 
-            if(factor == 2 || factor ==3){
+            if(input == 2 || input ==3){
                 count++;
+                result.add(input);
             }else {
                 while (factor <= input / 2) {
-                    if (input % factor == 0) {
-                        break;
-                    } else {
+                    if (input % factor == 0) { //나누어떨어지면 -> 소수가 아니면
+                        break; //while에서 빠져나가기
+                    } else { //나누어떨어지지 않으면
                         chk++;
                     }
                     factor++;
                 }
-                if (chk == 0) {
+                if (chk != 0) {//????????????????????????????????????
                     count++;
+                    result.add(input);
                 }
             }
 
@@ -41,6 +46,8 @@ public class Factor4 {
         }
 
         System.out.println(count);
+        System.out.println(result);
 
     }
 }
+//소수가 아닌 수를 찾아서 전체개수에서 빼기?
