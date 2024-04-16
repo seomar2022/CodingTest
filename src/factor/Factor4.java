@@ -1,6 +1,5 @@
 package factor;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Factor4 {
@@ -15,39 +14,25 @@ public class Factor4 {
         int N = sc.nextInt();
         int i =0;
 
-        int count =0;
-        int chk = 0;
+        int non_prime_number = 0;//소수가 아닌 수의 개수
 
-        ArrayList<Integer> result = new ArrayList<>();
-
-        while(i <N){
-            int factor=2;
+        while(i <N) {
             int input = sc.nextInt();
+            int factor=2;
 
-            if(input == 2 || input ==3){
-                count++;
-                result.add(input);
-            }else {
-                while (factor <= input / 2) {
-                    if (input % factor == 0) { //나누어떨어지면 -> 소수가 아니면
-                        break; //while에서 빠져나가기
-                    } else { //나누어떨어지지 않으면
-                        chk++;
-                    }
-                    factor++;
-                }
-                if (chk != 0) {//????????????????????????????????????
-                    count++;
-                    result.add(input);
-                }
+            if(input == 1){
+                non_prime_number++;
             }
-
+            while (factor <= input/2) {
+                if(input%factor == 0){ //나누어 떨어진다면 -> 소수가 아니라면
+                    non_prime_number++;
+                    break;
+                }
+                factor++;
+            }
             i++;
         }
-
-        System.out.println(count);
-        System.out.println(result);
-
+        System.out.println(N-non_prime_number);
     }
 }
 //소수가 아닌 수를 찾아서 전체개수에서 빼기?
